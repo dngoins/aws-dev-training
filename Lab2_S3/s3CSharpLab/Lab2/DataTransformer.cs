@@ -17,11 +17,11 @@ namespace Lab2
     {
         public static readonly string[] Attributes = { "genericDrugName", "adverseReaction" };
 
-        // TODO 1: Set input bucket name (must be globally unique)
-        public static readonly string InputBucketName = "<globally-unique-input-bucket-name>";
+        //  1: Set input bucket name (must be globally unique)
+        public static readonly string InputBucketName = "dng-aws-dev-training-csv-input";
 
-        // TODO 2: Set output bucket name (must be globally unique)
-        public static readonly string OutputBucketName = "<globally-unique-output-bucket-name>";
+        //  2: Set output bucket name (must be globally unique)
+        public static readonly string OutputBucketName = "dng-aws-dev-training-csv-oputput";
 
         public static readonly string JsonComment = "\"comment\": \"DataTransformer JSON\",";
 
@@ -219,8 +219,10 @@ namespace Lab2
          */
         private static AmazonS3Client CreateS3Client()
         {
-            // TODO 3: Replace the solution with your own code
-            return Solution.CreateS3Client();
+            // 3: Replace the solution with your own code
+            var s3Client = new AmazonS3Client(Amazon.RegionEndpoint.USEast1);
+            return s3Client;
+            //return Solution.CreateS3Client();
         }
 
         /**
@@ -233,8 +235,15 @@ namespace Lab2
          */
         private static GetObjectResponse GetS3Object(AmazonS3Client s3Client, string bucketName, string fileKey)
         {
-            // TODO 4: Replace the solution with your own code
-            return Solution.GetS3Object(s3Client, bucketName, fileKey);
+            // 4: Replace the solution with your own code
+            //    return Solution.GetS3Object(s3Client, bucketName, fileKey);
+            var request = new GetObjectRequest()
+            {
+                BucketName = bucketName,
+                Key = fileKey,
+            };
+            var response = s3Client.GetObject(request);
+            return response;
         }
 
         /**
@@ -246,7 +255,7 @@ namespace Lab2
          */
         private static void PutObjectBasic(string bucketName, string fileKey, string transformedFile)
         {
-            // TODO 5: Replace the solution with your own code
+            // 5: Replace the solution with your own code
             Solution.PutObjectBasic(s3ForStudentBuckets, bucketName, fileKey, transformedFile);
         }
 
