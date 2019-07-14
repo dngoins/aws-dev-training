@@ -49,8 +49,10 @@ namespace Calculator
         public async Task<string> FunctionHandler(S3Event evnt, ILambdaContext context)
         {
             var s3Event = evnt.Records?[0].S3;
+            //var records = evnt.Records?[0];
+            
             string result = "No numbers found in file";
-
+         
             // extract bucket and key from the event
             string bucket = s3Event.Bucket.Name;
             string key = s3Event.Object.Key;
@@ -77,8 +79,9 @@ namespace Calculator
                         var min = numbers.Min();
                         var max = numbers.Max();
                         var avg = numbers.Average();
+                        var count = numbers.Count();
 
-                        result = $"Min: {min} Max: {max} Average: {avg}";
+                        result = $"Min: {min} Max: {max} Average: {avg} Total Count: {count}";
                     }
                 }
                 Console.WriteLine(result);
@@ -105,8 +108,8 @@ namespace Calculator
                 {
                     S3 = new S3EventNotification.S3Entity
                     {
-                        // TODO 1: Update the event bucket name
-                        Bucket = new S3EventNotification.S3BucketEntity { Name = "REPLACE WITH BUCKET NAME" },
+                        //  Update the event bucket name
+                        Bucket = new S3EventNotification.S3BucketEntity { Name = "calculator-input-dng-aws-dev-training" },
                         Object = new S3EventNotification.S3ObjectEntity { Key = "numbers.txt" }
                     }
                 });

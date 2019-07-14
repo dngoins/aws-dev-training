@@ -1,0 +1,11 @@
+C:\Users\Administrator\aws-dev-training\Lab4_Lambda\lambdaCSharpLab\bin\Release\netcoreapp2.1\linux-x64\Calculator.deps.json
+C:\Users\Administrator\aws-dev-training\Lab4_Lambda\lambdaCSharpLab\bin\Release\netcoreapp2.1\linux-x64\Calculator.runtimeconfig.json
+C:\Users\Administrator\aws-dev-training\Lab4_Lambda\lambdaCSharpLab\bin\Release\netcoreapp2.1\linux-x64\Calculator.runtimeconfig.dev.json
+C:\Users\Administrator\aws-dev-training\Lab4_Lambda\lambdaCSharpLab\bin\Release\netcoreapp2.1\linux-x64\Calculator.dll
+C:\Users\Administrator\aws-dev-training\Lab4_Lambda\lambdaCSharpLab\bin\Release\netcoreapp2.1\linux-x64\Calculator.pdb
+C:\Users\Administrator\aws-dev-training\Lab4_Lambda\lambdaCSharpLab\obj\Release\netcoreapp2.1\linux-x64\Calculator.csprojAssemblyReference.cache
+C:\Users\Administrator\aws-dev-training\Lab4_Lambda\lambdaCSharpLab\obj\Release\netcoreapp2.1\linux-x64\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\aws-dev-training\Lab4_Lambda\lambdaCSharpLab\obj\Release\netcoreapp2.1\linux-x64\Calculator.AssemblyInfoInputs.cache
+C:\Users\Administrator\aws-dev-training\Lab4_Lambda\lambdaCSharpLab\obj\Release\netcoreapp2.1\linux-x64\Calculator.AssemblyInfo.cs
+C:\Users\Administrator\aws-dev-training\Lab4_Lambda\lambdaCSharpLab\obj\Release\netcoreapp2.1\linux-x64\Calculator.dll
+C:\Users\Administrator\aws-dev-training\Lab4_Lambda\lambdaCSharpLab\obj\Release\netcoreapp2.1\linux-x64\Calculator.pdb
