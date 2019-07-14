@@ -93,8 +93,23 @@ namespace Lab3
          */
         private static QueryResponse QueryCityRelatedItems(string inputCity)
         {
-            // TODO 2: Replace the solution with your own code
-            return Solution.QueryCityRelatedItems(dynamoDBClient, inputCity, InfectionsTableName, CityDateIndexName);
+            // Replace the solution with your own code
+            //return Solution.QueryCityRelatedItems(dynamoDBClient, inputCity, InfectionsTableName, CityDateIndexName);
+            // https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LowLevelDotNetQuerying.html
+
+
+            var req = new QueryRequest
+            {
+                TableName = InfectionsTableName,
+                KeyConditionExpression = "City = :v_city",
+                ExpressionAttributeValues = new Dictionary<string, AttributeValue> {
+                {":v_city", new AttributeValue { S =  inputCity }}}
+            };
+
+            var response = dynamoDBClient.Query(req);
+            return response;
+
+
         }
     }
 }

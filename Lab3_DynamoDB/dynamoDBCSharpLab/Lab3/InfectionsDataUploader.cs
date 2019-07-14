@@ -2,8 +2,10 @@
 
 using Amazon;
 using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.Model;
 using Amazon.S3;
 using Amazon.S3.Model;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
@@ -105,7 +107,7 @@ namespace Lab3
         private static void Init()
         {
             dynamoDBClient = new AmazonDynamoDBClient();
-            RegionEndpoint region = RegionEndpoint.USWest2;
+            RegionEndpoint region = RegionEndpoint.USEast1;
             s3 = new AmazonS3Client(region);
         }
 
@@ -116,8 +118,23 @@ namespace Lab3
          */
         private static void AddItemToTable(string[] infectionsDataAttrValues)
         {
-            // TODO 1: Replace the solution with your own code
-            Solution.AddItemToTable(dynamoDBClient, infectionsDataAttrValues, InfectionsTableName);
+            // Replace the solution with your own code
+            //https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LowLevelDotNetItemCRUD.html#PutItemLowLevelAPIDotNet
+
+            var request = new PutItemRequest
+            {
+                TableName = InfectionsTableName,
+                Item = new Dictionary<string, AttributeValue>()
+                {
+                  { "PatientId", new AttributeValue { N = infectionsDataAttrValues[0]}},
+                  { "City", new AttributeValue { S = infectionsDataAttrValues[1] }},
+                  { "Date", new AttributeValue { S = infectionsDataAttrValues[2] }},
+                  
+                }
+            };
+
+            dynamoDBClient.PutItem(request);
+
         }
     }
 }
