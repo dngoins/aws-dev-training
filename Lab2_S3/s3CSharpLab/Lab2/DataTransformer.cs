@@ -7,6 +7,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Lab2
@@ -17,11 +18,11 @@ namespace Lab2
     {
         public static readonly string[] Attributes = { "genericDrugName", "adverseReaction" };
 
-        // TODO 1: Set input bucket name (must be globally unique)
-        public static readonly string InputBucketName = "<globally-unique-input-bucket-name>";
+        //  Set input bucket name (must be globally unique)
+        public static readonly string InputBucketName = "dng-aws-dev-training-input";
 
-        // TODO 2: Set output bucket name (must be globally unique)
-        public static readonly string OutputBucketName = "<globally-unique-output-bucket-name>";
+        // Set output bucket name (must be globally unique)
+        public static readonly string OutputBucketName = "dng-aws-dev-training-output";
 
         public static readonly string JsonComment = "\"comment\": \"DataTransformer JSON\",";
 
@@ -65,11 +66,17 @@ namespace Lab2
                             GetObjectResponse curObject = GetS3Object(s3ForStudentBuckets, InputBucketName, fileKey);
                             transformedFile = TransformText(curObject);
 
-                            // TODO 7: Switch to enhanced file upload
-                            PutObjectBasic(OutputBucketName, fileKey, transformedFile);
-                            // PutObjectEnhanced(OutputBucketName, fileKey, transformedFile);
+                            //  Switch to enhanced file upload
+                            //var putResponse = PutObjectBasic(s3ForStudentBuckets, OutputBucketName, fileKey, transformedFile);
 
-                            url = GeneratePresignedURL(fileKey);
+                            // PutObjectEnhanced(OutputBucketName, fileKey, transformedFile);
+                            var putResponse = PutObjectEnhanced(s3ForStudentBuckets, OutputBucketName, fileKey, transformedFile);
+
+                            // File is now encrypted to decrypt use the DownloadObjectAsync 
+                            // method logic from here: https://docs.aws.amazon.com/AmazonS3/latest/dev/sse-c-using-dot-net-sdk.html
+
+
+                            url = GeneratePresignedURL(fileKey, OutputBucketName);
                             if (url != null)
                             {
                                 preSignedUrls.Add(url);
@@ -219,8 +226,11 @@ namespace Lab2
          */
         private static AmazonS3Client CreateS3Client()
         {
-            // TODO 3: Replace the solution with your own code
-            return Solution.CreateS3Client();
+            // Replace the solution with your own code
+
+            var client = new AmazonS3Client();
+            return client;
+
         }
 
         /**
@@ -233,8 +243,17 @@ namespace Lab2
          */
         private static GetObjectResponse GetS3Object(AmazonS3Client s3Client, string bucketName, string fileKey)
         {
-            // TODO 4: Replace the solution with your own code
-            return Solution.GetS3Object(s3Client, bucketName, fileKey);
+            //  Replace the solution with your own code
+           
+            GetObjectRequest request = new GetObjectRequest
+            {
+                BucketName = bucketName,
+                Key = fileKey,
+                //ByteRange = new ByteRange(0, 10)
+            };
+
+            GetObjectResponse response = s3Client.GetObject(request);
+            return response;
         }
 
         /**
@@ -244,10 +263,21 @@ namespace Lab2
          * @param fileKey             Key (path) to the file
          * @param transformedFile     Contents of the file
          */
-        private static void PutObjectBasic(string bucketName, string fileKey, string transformedFile)
+        private static PutObjectResponse PutObjectBasic(AmazonS3Client s3Client, string bucketName, string fileKey, string transformedFile)
         {
-            // TODO 5: Replace the solution with your own code
-            Solution.PutObjectBasic(s3ForStudentBuckets, bucketName, fileKey, transformedFile);
+            //  Replace the solution with your own code
+            var putRequest1 = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = fileKey,
+                ContentBody = transformedFile
+            };
+            putRequest1.Metadata.Add("x-amz-meta-title", fileKey);
+            putRequest1.Metadata.Add("contact", "John Doe");
+
+            PutObjectResponse response1 = s3Client.PutObject(putRequest1);
+
+            return response1;
         }
 
         /**
@@ -256,10 +286,22 @@ namespace Lab2
          * @param objectKey     Key (path) to the file
          * @return              Presigned URL
          */
-        private static string GeneratePresignedURL(string objectKey)
+        private static string GeneratePresignedURL(string objectKey, string bucketName)
         {
-            // TODO 6: Replace the solution with your own code
-            return Solution.GeneratePresignedURL(s3ForStudentBuckets, OutputBucketName, objectKey);
+            // Replace the solution with your own code
+            var urlString = string.Empty;
+
+            GetPreSignedUrlRequest request1 = new GetPreSignedUrlRequest
+            {
+                BucketName = bucketName,
+                Key = objectKey,
+                Verb = HttpVerb.GET,
+                Expires = DateTime.Now.AddMinutes(15)
+            };
+            urlString = s3ForStudentBuckets.GetPreSignedURL(request1);
+
+            return urlString;
+
         }
 
         /**
@@ -269,10 +311,38 @@ namespace Lab2
          * @param fileKey             Key (path) to the file
          * @param transformedFile     Contents of the file
          */
-        private static void PutObjectEnhanced(string bucketName, string fileKey, string transformedFile)
+        private static PutObjectResponse PutObjectEnhanced(AmazonS3Client s3Client, string bucketName, string fileKey, string transformedFile)
         {
-            // TODO 8: Replace the solution with your own code
-            Solution.PutObjectEnhanced(s3ForStudentBuckets, bucketName, fileKey, transformedFile);
+            // Replace the solution with your own code
+            //Solution.PutObjectEnhanced(s3ForStudentBuckets, bucketName, fileKey, transformedFile);
+
+            //  Replace the solution with your own code
+            
+            Aes aesEncryption = Aes.Create();
+            aesEncryption.KeySize = 256;
+            aesEncryption.GenerateKey();
+            string base64Key = Convert.ToBase64String(aesEncryption.Key);
+
+            Debug.WriteLine("KEY: " + base64Key);
+
+            // 1. Upload the object.
+            PutObjectRequest putObjectRequest = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = fileKey,
+                ContentBody = transformedFile,
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                ServerSideEncryptionCustomerProvidedKey = base64Key
+            };
+
+            putObjectRequest.Metadata.Add("x-amz-meta-title", fileKey);
+            putObjectRequest.Metadata.Add("contact", "John Doe");
+
+            PutObjectResponse putObjectResponse = s3Client.PutObject(putObjectRequest);
+            return putObjectResponse;
+
+           
+
         }
     }
 }
