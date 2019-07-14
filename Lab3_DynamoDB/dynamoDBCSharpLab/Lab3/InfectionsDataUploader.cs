@@ -107,7 +107,7 @@ namespace Lab3
         private static void Init()
         {
             dynamoDBClient = new AmazonDynamoDBClient();
-            RegionEndpoint region = RegionEndpoint.USEast1;
+            RegionEndpoint region = RegionEndpoint.USWest2;
             s3 = new AmazonS3Client(region);
         }
 
@@ -123,10 +123,10 @@ namespace Lab3
 
             var request = new PutItemRequest
             {
-                TableName = InfectionsTableName,
+                TableName = InfectionsTableCreator.InfectionsTableName,
                 Item = new Dictionary<string, AttributeValue>()
                 {
-                  { "PatientId", new AttributeValue { N = infectionsDataAttrValues[0]}},
+                  { "PatientID", new AttributeValue { S = infectionsDataAttrValues[0]}},
                   { "City", new AttributeValue { S = infectionsDataAttrValues[1] }},
                   { "Date", new AttributeValue { S = infectionsDataAttrValues[2] }},
                   
