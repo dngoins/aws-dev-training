@@ -1,0 +1,14 @@
+{
+  "Records": [
+    {
+      "s3": {
+        "bucket": {
+          "name": "calculator-input-jd2"
+        },
+        "object": {
+          "key": "numbers.txt"
+        }
+      }
+    }
+  ]
+}
