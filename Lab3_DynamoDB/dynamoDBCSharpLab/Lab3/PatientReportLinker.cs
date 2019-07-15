@@ -83,8 +83,11 @@ namespace Lab3
          */
         private static UpdateItemResponse UpdateItem(UpdateItemRequest requestUpdate)
         {
-            // TODO 3: Replace the solution with your own code
-            return Solution.UpdateItem(dynamoDBClient, requestUpdate);
+            // Replace the solution with your own code
+            //return Solution.UpdateItem(dynamoDBClient, requestUpdate);
+            var response = dynamoDBClient.UpdateItem(requestUpdate);
+            return response;
+
         }
     }
 }

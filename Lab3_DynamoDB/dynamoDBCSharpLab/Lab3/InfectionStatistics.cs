@@ -101,6 +101,7 @@ namespace Lab3
             var req = new QueryRequest
             {
                 TableName = InfectionsTableName,
+                IndexName = CityDateIndexName,
                 KeyConditionExpression = "City = :v_city",
                 ExpressionAttributeValues = new Dictionary<string, AttributeValue> {
                 {":v_city", new AttributeValue { S =  inputCity }}}
