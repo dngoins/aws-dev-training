@@ -1,0 +1,10 @@
+124d4d68-8116-413c-9386-dda00811e12b\:credentialProfileName=default
+alwaysReloadWhenCredentialProfileFileModified=true
+cognitoIdentityId=us-east-1\:716f356c-4bda-44db-a29b-35dc19174df5
+cognitoIdentityPoolId=us-east-1\:d4fdc07f-94fd-4cc6-94fb-f903657f05c1
+credentialProfileAccountIds=124d4d68-8116-413c-9386-dda00811e12b
+currentAccount=124d4d68-8116-413c-9386-dda00811e12b
+currentDefaultAccount=124d4d68-8116-413c-9386-dda00811e12b
+ec2PreferencesImported=true
+eclipse.preferences.version=1
+toolkitAnalyticsCollectionEnabled=false
