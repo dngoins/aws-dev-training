@@ -10,11 +10,11 @@ namespace Lab5
     // The SNSPublisher class publishes messages to SNS topics.
     public class SNSPublisher
     {
-        // TODO 1: Set ARN for SNS topic for email messages.
-        private static string topicArnEmail = "<Email-SNS-Topic-ARN>";
+        // 1: Set ARN for SNS topic for email messages.
+        private static string topicArnEmail = "arn:aws:sns:us-east-1:280917860786:EmailSNSTopic";
 
-        // TODO 2: Set ARN for SNS topic for order messages.
-        private static string topicArnOrder = "<Order-SNS-Topic-ARN>";
+        // 2: Set ARN for SNS topic for order messages.
+        private static string topicArnOrder = "arn:aws:sns:us-east-1:280917860786:OrderSNSTopic";
 
         private static string emailSubject = "Status of pharmaceuticals order.";
         private static string emailMessage = "Your pharmaceutical supplies will be shipped 5 business days from the date of order.";
@@ -74,8 +74,11 @@ namespace Lab5
          */
         private static AmazonSimpleNotificationServiceClient CreateSNSClient()
         {
-            // TODO 3: Replace the solution with your own code
-            return Solution.CreateSNSClient();
+            // 3: Replace the solution with your own code
+            // return Solution.CreateSNSClient();
+            var snsClient = new AmazonSimpleNotificationServiceClient();
+            return snsClient;
+
         }
 
         /**
@@ -84,8 +87,12 @@ namespace Lab5
          */
         private static void PublishEmailMessage()
         {
-            // TODO 4: Replace the solution with your own code
-            Solution.PublishEmailMessage(snsClient, topicArnEmail, emailMessage, emailSubject);
+            // 4: Replace the solution with your own code
+            // Solution.PublishEmailMessage(snsClient, topicArnEmail, emailMessage, emailSubject);
+            // https://docs.aws.amazon.com/sdkfornet/v3/apidocs/items/SNS/MSNSPublishStringStringString.html
+            snsClient.Publish(topicArnEmail, emailMessage, emailSubject);
+
+
         }
 
         /**
@@ -98,8 +105,11 @@ namespace Lab5
          */
         private static void ConvertOrderToJSON(Order order, MemoryStream stream1, DataContractJsonSerializer ser)
         {
-            // TODO 5: Replace the solution with your own code
-            Solution.ConvertOrderToJSON(order, stream1, ser);
+            //  5: Replace the solution with your own code
+            //Solution.ConvertOrderToJSON(order, stream1, ser);
+            // https://docs.microsoft.com/en-us/dotnet/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data
+            ser.WriteObject(stream1, order);
+
         }
 
         /**
@@ -109,8 +119,11 @@ namespace Lab5
          */
         private static void PublishOrder(string jsonOrder)
         {
-            // TODO 6: Replace the solution with your own code
-            Solution.PublishOrder(snsClient, topicArnOrder, jsonOrder);
+            // T6: Replace the solution with your own code
+            //Solution.PublishOrder(snsClient, topicArnOrder, jsonOrder);
+            // https://docs.aws.amazon.com/sdkfornet/v3/apidocs/items/SNS/MSNSPublishStringString.html
+            snsClient.Publish(topicArnOrder, jsonOrder);
+
         }
     }
 }
