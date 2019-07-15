@@ -66,8 +66,10 @@ namespace Lab5
          */
         private static AmazonSQSClient CreateSQSClient()
         {
-            // TODO 7: Replace the solution with your own code
-            return Solution.CreateSQSClient();
+            //  7: Replace the solution with your own code
+            //return Solution.CreateSQSClient();
+            var client = new AmazonSQSClient();
+            return client;
         }
 
         /**
@@ -78,8 +80,10 @@ namespace Lab5
          */
         private static string GetURL()
         {
-            // TODO 8: Replace the solution with your own code
-            return Solution.GetURL(sqsClient, QueueName);
+            // 8: Replace the solution with your own code
+            //return Solution.GetURL(sqsClient, QueueName);
+            return sqsClient.GetQueueUrl(QueueName).QueueUrl;
+
         }
 
         /**
@@ -92,7 +96,12 @@ namespace Lab5
         private static ReceiveMessageRequest CreateRequest(string queueUrl)
         {
             // TODO 9: Replace the solution with your own code
-            return Solution.CreateRequest(queueUrl);
+            //return Solution.CreateRequest(queueUrl);
+            var request = new ReceiveMessageRequest()
+            { MaxNumberOfMessages =10 };
+            return request;
+
+
         }
 
         /**
