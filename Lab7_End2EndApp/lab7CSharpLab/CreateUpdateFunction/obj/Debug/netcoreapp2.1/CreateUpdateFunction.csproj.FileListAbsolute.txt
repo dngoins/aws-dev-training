@@ -1,0 +1,11 @@
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\CreateUpdateFunction\bin\Debug\netcoreapp2.1\CreateUpdateFunction.deps.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\CreateUpdateFunction\bin\Debug\netcoreapp2.1\CreateUpdateFunction.runtimeconfig.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\CreateUpdateFunction\bin\Debug\netcoreapp2.1\CreateUpdateFunction.runtimeconfig.dev.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\CreateUpdateFunction\bin\Debug\netcoreapp2.1\CreateUpdateFunction.dll
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\CreateUpdateFunction\bin\Debug\netcoreapp2.1\CreateUpdateFunction.pdb
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\CreateUpdateFunction\obj\Debug\netcoreapp2.1\CreateUpdateFunction.csprojAssemblyReference.cache
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\CreateUpdateFunction\obj\Debug\netcoreapp2.1\CreateUpdateFunction.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\CreateUpdateFunction\obj\Debug\netcoreapp2.1\CreateUpdateFunction.AssemblyInfoInputs.cache
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\CreateUpdateFunction\obj\Debug\netcoreapp2.1\CreateUpdateFunction.AssemblyInfo.cs
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\CreateUpdateFunction\obj\Debug\netcoreapp2.1\CreateUpdateFunction.dll
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\CreateUpdateFunction\obj\Debug\netcoreapp2.1\CreateUpdateFunction.pdb

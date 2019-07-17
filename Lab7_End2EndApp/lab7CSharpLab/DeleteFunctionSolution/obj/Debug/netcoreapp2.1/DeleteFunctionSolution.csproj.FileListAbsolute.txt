@@ -1,0 +1,10 @@
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DeleteFunctionSolution\bin\Debug\netcoreapp2.1\DeleteFunctionSolution.deps.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DeleteFunctionSolution\bin\Debug\netcoreapp2.1\DeleteFunctionSolution.runtimeconfig.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DeleteFunctionSolution\bin\Debug\netcoreapp2.1\DeleteFunctionSolution.runtimeconfig.dev.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DeleteFunctionSolution\bin\Debug\netcoreapp2.1\DeleteFunctionSolution.dll
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DeleteFunctionSolution\bin\Debug\netcoreapp2.1\DeleteFunctionSolution.pdb
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DeleteFunctionSolution\obj\Debug\netcoreapp2.1\DeleteFunctionSolution.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DeleteFunctionSolution\obj\Debug\netcoreapp2.1\DeleteFunctionSolution.AssemblyInfoInputs.cache
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DeleteFunctionSolution\obj\Debug\netcoreapp2.1\DeleteFunctionSolution.AssemblyInfo.cs
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DeleteFunctionSolution\obj\Debug\netcoreapp2.1\DeleteFunctionSolution.dll
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DeleteFunctionSolution\obj\Debug\netcoreapp2.1\DeleteFunctionSolution.pdb

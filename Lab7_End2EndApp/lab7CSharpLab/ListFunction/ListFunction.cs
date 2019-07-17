@@ -28,7 +28,7 @@ namespace ListFunction
         /// <param name="note">POCO of Note from the JSON payload from API GW to Lambda. In this case, it will only have the userId set</param>
         /// <param name="context">Lambda context</param>
         /// <returns>List of Note from the Query to DynamoDB based on the userId</returns>
-        public List<Note> FunctionHandler(Note note, ILambdaContext context)
+        public async Task<List<Note>> FunctionHandler(Note note, ILambdaContext context)
         {
             // The note object only contains the userId as it's the only parameter sent in the /notes/GET
             // {
@@ -38,16 +38,20 @@ namespace ListFunction
             Console.WriteLine("Initiating PollyNotes-ListFunction...");
 
             // Create the DynamoDB client and the Context for Object Persistence Model
+            AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+            DynamoDBContext ctxt = new DynamoDBContext(client);
 
 
             // Use the QueryAsync method to issue a query to DynamoDB based on the userId
+            var searchNotes =  ctxt.QueryAsync<Note>(note.userId);
 
-
+            
             // Retrieve all of the notes based on the Query from DynamoDB using GetRemainingAsync and wait
+            var notes = await searchNotes.GetRemainingAsync();
 
 
             // Return the list of Note (currently returning an empty list)
-            return new List<Note>();
+            return notes;
         }
 
         /// <summary>
@@ -60,8 +64,11 @@ namespace ListFunction
             {  
                 ""userId"":""testuser""
             }";
-            List<Note> noteList = new ListFunction().FunctionHandler(JsonConvert.DeserializeObject<Note>(listTest), null);
-            Console.WriteLine(JsonConvert.SerializeObject(noteList));
+
+                       
+            Task<List<Note>> noteList = new ListFunction().FunctionHandler(JsonConvert.DeserializeObject<Note>(listTest), null);
+            noteList.Wait();
+            Console.WriteLine(JsonConvert.SerializeObject(noteList.Result));
         }
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\SearchFunctionSolution\bin\Debug\netcoreapp2.1\SearchFunctionSolution.deps.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\SearchFunctionSolution\bin\Debug\netcoreapp2.1\SearchFunctionSolution.runtimeconfig.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\SearchFunctionSolution\bin\Debug\netcoreapp2.1\SearchFunctionSolution.runtimeconfig.dev.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\SearchFunctionSolution\bin\Debug\netcoreapp2.1\SearchFunctionSolution.dll
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\SearchFunctionSolution\bin\Debug\netcoreapp2.1\SearchFunctionSolution.pdb
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\SearchFunctionSolution\obj\Debug\netcoreapp2.1\SearchFunctionSolution.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\SearchFunctionSolution\obj\Debug\netcoreapp2.1\SearchFunctionSolution.AssemblyInfoInputs.cache
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\SearchFunctionSolution\obj\Debug\netcoreapp2.1\SearchFunctionSolution.AssemblyInfo.cs
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\SearchFunctionSolution\obj\Debug\netcoreapp2.1\SearchFunctionSolution.dll
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\SearchFunctionSolution\obj\Debug\netcoreapp2.1\SearchFunctionSolution.pdb

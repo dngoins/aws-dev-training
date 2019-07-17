@@ -1,0 +1,11 @@
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DictateFunction\bin\Debug\netcoreapp2.1\DictateFunction.deps.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DictateFunction\bin\Debug\netcoreapp2.1\DictateFunction.runtimeconfig.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DictateFunction\bin\Debug\netcoreapp2.1\DictateFunction.runtimeconfig.dev.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DictateFunction\bin\Debug\netcoreapp2.1\DictateFunction.dll
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DictateFunction\bin\Debug\netcoreapp2.1\DictateFunction.pdb
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DictateFunction\obj\Debug\netcoreapp2.1\DictateFunction.csprojAssemblyReference.cache
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DictateFunction\obj\Debug\netcoreapp2.1\DictateFunction.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DictateFunction\obj\Debug\netcoreapp2.1\DictateFunction.AssemblyInfoInputs.cache
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DictateFunction\obj\Debug\netcoreapp2.1\DictateFunction.AssemblyInfo.cs
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DictateFunction\obj\Debug\netcoreapp2.1\DictateFunction.dll
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\DictateFunction\obj\Debug\netcoreapp2.1\DictateFunction.pdb

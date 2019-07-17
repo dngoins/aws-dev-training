@@ -7,7 +7,7 @@
         "All the command line options for the Lambda command can be specified in this file."
     ],
     "profile"     : "default",
-    "region"      : "",
+    "region"      : "us-east-1",
     "configuration" : "Release",
     "framework"     : "netcoreapp2.1",
     "function-runtime" : "dotnetcore2.1",
@@ -16,5 +16,6 @@
     "function-handler"     : "ListFunction::ListFunction.ListFunction::FunctionHandler",
     "function-name"        : "PollyNotes-ListFunction",
     "tracing-mode"         : "PassThrough",
-    "environment-variables" : ""
+    "environment-variables" : "",
+    "function-role"         : "arn:aws:iam::927788057782:role/PollyNotesRole"
 }

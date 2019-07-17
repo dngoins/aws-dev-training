@@ -1,0 +1,11 @@
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\ListFunction\bin\Release\netcoreapp2.1\linux-x64\ListFunction.deps.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\ListFunction\bin\Release\netcoreapp2.1\linux-x64\ListFunction.runtimeconfig.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\ListFunction\bin\Release\netcoreapp2.1\linux-x64\ListFunction.runtimeconfig.dev.json
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\ListFunction\bin\Release\netcoreapp2.1\linux-x64\ListFunction.dll
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\ListFunction\bin\Release\netcoreapp2.1\linux-x64\ListFunction.pdb
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\ListFunction\obj\Release\netcoreapp2.1\linux-x64\ListFunction.csprojAssemblyReference.cache
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\ListFunction\obj\Release\netcoreapp2.1\linux-x64\ListFunction.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\ListFunction\obj\Release\netcoreapp2.1\linux-x64\ListFunction.AssemblyInfoInputs.cache
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\ListFunction\obj\Release\netcoreapp2.1\linux-x64\ListFunction.AssemblyInfo.cs
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\ListFunction\obj\Release\netcoreapp2.1\linux-x64\ListFunction.dll
+C:\Users\Administrator\aws-dev-training\Lab7_End2EndApp\lab7CSharpLab\ListFunction\obj\Release\netcoreapp2.1\linux-x64\ListFunction.pdb
