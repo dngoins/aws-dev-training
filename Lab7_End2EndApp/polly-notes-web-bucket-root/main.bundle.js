@@ -1,7 +1,7 @@
 // Change the following 3 variable's value
-var API_GATEWAY_INVOKE_URL = "https://your-api-url"
-var COGNITO_POOL_ID = 'us-east-1-xxxxxxxxxxx'
-var COGNITO_APP_CLIENT_ID = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+var API_GATEWAY_INVOKE_URL = "https://hi5zn4h5ti.execute-api.us-east-1.amazonaws.com/prod"
+var COGNITO_POOL_ID = 'us-east-1_FJBTCASW3'
+var COGNITO_APP_CLIENT_ID = 'jk0j995numoad2qce2611eqb1'
 
 // DON'T CHANGE ANYTHING BEYOND THIS LINE
 // --------------------------------------------------------------------------------------------------
